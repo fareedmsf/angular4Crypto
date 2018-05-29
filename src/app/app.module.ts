@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
@@ -17,6 +18,10 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import {pageNotFoundComponent} from '../app/pageNotFound.component';
 
 import {RouterModule,Routes} from '@angular/router';
+
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import { jqueryclass } from './shared/jquery.service'
+
 
 const appRoutes:Routes =[
   {  path:'table',component:TableComponent },
@@ -38,7 +43,10 @@ const appRoutes:Routes =[
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatTableModule,
+    NgxChartsModule, 
+
     HttpModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),

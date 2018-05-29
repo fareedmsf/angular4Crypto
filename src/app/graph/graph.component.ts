@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import {single, multi} from './../../assets/data';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 @Component({
   selector: 'app-graph',
   templateUrl: './graph.component.html',
@@ -28,14 +30,53 @@ export class GraphComponent implements OnInit {
 
 
   constructor() {
-   
+    
+  var single = [
+    {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    },
+    {
+      "name": "France",
+      "value": 7200000
+    },{
+      "name": "Germany1",
+      "value": 8940000
+    },
+    {
+      "name": "USA1",
+      "value": 5000000
+    },
+    {
+      "name": "France1",
+      "value": 7200000
+    },{
+      "name": "Germany11",
+      "value": 8940000
+    },
+    {
+      "name": "USA11",
+      "value": 5000000
+    },
+    {
+      "name": "France11",
+      "value": 7200000
+    }
+  ];
+    Object.assign(this,{single})
    }
 
   ngOnInit() {
+     
   }
   onSelect(event) {
     console.log(event);
   }
+
 }
 
 
