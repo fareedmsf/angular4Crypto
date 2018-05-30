@@ -8,8 +8,7 @@ import { Http, Response } from '@angular/http/';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
-  providers: [CoininfoService]
+  styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
 
@@ -40,11 +39,12 @@ export class TableComponent implements OnInit {
       for (let i = 0; i < this.x.length; i++) {
         this.x[i]['ind'] = i + 1;
         let dt = {};
-        dt['name'] = this.x[i].symbol;
-        dt['value'] = this.x[i].market_data.current_price.usd;
+        dt['name'] = this.x[i]['symbol'];
+        dt['value'] = this.x[i]['market_data'].current_price.usd;
         this.graphdata.push(dt);
      }
-      console.log(this.graphdata)
+      console.log(this.graphdata);
+      this.coininfo.setData(this.graphdata);
       this.table_function();
     });
 

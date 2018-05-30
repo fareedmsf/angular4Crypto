@@ -1,3 +1,4 @@
+import { CoininfoService } from './service/coininfo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +22,7 @@ import {RouterModule,Routes} from '@angular/router';
 
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import { jqueryclass } from './shared/jquery.service'
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes:Routes =[
@@ -44,6 +46,7 @@ const appRoutes:Routes =[
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatTableModule,
     NgxChartsModule, 
 
@@ -51,7 +54,7 @@ const appRoutes:Routes =[
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [CoininfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,12 @@
 <!-- <p>
   graph works! from git this is from branch
 </p> -->
- 
-<ngx-charts-bar-horizontal
+
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <ngx-charts-bar-horizontal
       [view]="view"
       [scheme]="colorScheme"
       [results]="single"
@@ -16,3 +20,38 @@
       [yAxisLabel]="yAxisLabel"
       (select)="onSelect($event)">
     </ngx-charts-bar-horizontal>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 
+<!-- <ngx-charts-bar-horizontal
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-horizontal> -->
+
+
+    <!-- <ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [legend]="showLegend"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      [gradient]="gradient"
+      (select)="onSelect($event)">
+    </ngx-charts-pie-chart> -->
