@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDataComponent implements OnInit {
 
+  Email:string;
+  Password:string;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  login(){
+    console.log("in");
+    let credential={}
+    credential['email']= this.Email;
+    credential['password'] =this.Password;
+    console.log(credential);
+    return 
   }
 
 }

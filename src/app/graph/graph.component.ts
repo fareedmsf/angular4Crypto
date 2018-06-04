@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import {single, multi} from './../../assets/data';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import { CoininfoService } from '../service/coininfo.service';
+
 @Component({
   selector: 'app-graph',
   templateUrl: './graph.component.html',
@@ -10,32 +13,35 @@ export class GraphComponent implements OnInit {
   single: any[];
   multi: any[];
 
-  view: any[] = [700, 400];
+  view: any[] = [1150,1000];
 
   // options
   showXAxis = true;
   showYAxis = true;
-  gradient = false;
+  gradient = true;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Price';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Coin Names';
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#f48fb1', '#ccff90', '#f4ff81', '#AAAAAA','#b2dfdb','#2962ff','#6200ea','#651fff','#c6ff00','#00e676','#64dd17']
   };
 
 
-  constructor() {
-   
-   }
+  constructor(private coin:CoininfoService) {
+  }
+  
 
   ngOnInit() {
+     this.single = this.coin.getData();
+     console.log(this.single)
   }
   onSelect(event) {
     console.log(event);
   }
+
 }
 
 
